@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sunset</title>
+	<style type="text/css" media="screen">
+		.background {
+			margin: 0px;
+			padding: 0px;
+			width: 100vw;
+			height: 100vh;
+			background: linear-gradient(#090909, #857d8d, #F56217 35%, #ffe3c8);
+			/* background: linear-gradient(0deg,  0%, #EFAD9E 45%, #FCAD46 65%, #a78a92 85%,  100%); */
+			background-position: center bottom;
+			background-size: 100% 300%;
+			position: absolute;
+			top: 0; left: 0;
+			overflow: hidden;
+			-webkit-animation: sunset-bg 34s ease-in 3s forwards;
+			-o-animation: sunset-bg 34s ease-in 3s forwards;
+			animation: sunset-bg 34s ease-in 3s forwards;
+		}
+		.sun {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: linear-gradient(to top, red, yellow);
+			background-size: 100% 200%;
+			background-position: center top;
+			box-shadow: 0px 0px 30px #ff7e00, 0px 0px 30px -2px #be5c2b, 0px 0px 100px -10px yellow;
+			margin: calc(50vh - 200px) auto;
+
+			-webkit-animation: sunset 28s ease-in 3s forwards;
+			-o-animation: sunset 28s ease-in 3s forwards;
+			animation: sunset 28s ease-in 3s forwards;
+			transition: 1s all;
+		}
+
+		@keyframes sunset {
+			70% {
+				box-shadow: 0 0 10px #ff7e00, 0 0 5px #be5c2b, 0 0 30px #F56217;
+				background-position: center bottom;
+			}
+			100% {
+				box-shadow: none;
+				margin: calc(100vh) auto;
+				background-position: center bottom;
+			}
+		}
+
+		@keyframes sunset-bg {
+			100% {
+				background-position: center top;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="background">
+		<div class="sun"></div>
+	</div>
+</body>
+</html>
